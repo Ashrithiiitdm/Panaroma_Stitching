@@ -46,10 +46,9 @@ def main():
     together into a panorama using different algorithms for comparison.
     
     ### Tips for best results:
-    - Use images taken from the same position (rotation only)
     - Make sure images have sufficient overlap (30-50%)
     - Use images with similar lighting conditions
-    - Upload images in the correct order (left to right or right to left)
+    - Upload images in the correct order (left to right)
     """)
 
     uploaded_files = st.file_uploader(
