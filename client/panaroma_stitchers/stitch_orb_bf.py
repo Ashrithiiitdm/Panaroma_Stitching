@@ -33,6 +33,12 @@ def stitch_panorama(images):
             H, status = cv.findHomography(dst_pts, src_pts, cv.RANSAC, 5.0)
 
             if H is not None and status is not None:
+                inliers = np.sum(status)
+                inlier_ratio = float(inliers) / len(status)
+
+                if inliers < 10 or inlier_ratio < 0.3:
+                    st.error(f"Image {i+1}: Homography rejected due to poor inlier support ({inliers} inliers, ratio={inlier_ratio:.2f})")
+                    return None
                 print("H matrix+ orb_bf:", H)
                 # Warp and stitch images
                 h1, w1 = result_img.shape[:2]
