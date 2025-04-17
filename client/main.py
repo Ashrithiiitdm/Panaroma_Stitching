@@ -46,7 +46,7 @@ def main():
     together into a panorama using different algorithms for comparison.
     
     ### Tips for best results:
-    - Make sure images have sufficient overlap (30-50%)
+    - Make sure images have sufficient overlap
     - Use images with similar lighting conditions
     - Upload images in the correct order (left to right)
     """)
